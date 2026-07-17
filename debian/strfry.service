@@ -1,16 +1,16 @@
 [Unit]
-Description=strfry relay service
-After=syslog.target network.target 
+Description=Strfry relay
+After=network.target
 
 [Service]
+Type=simple
 User=strfry
-ExecStart=/usr/bin/strfry relay
+Group=strfry
+WorkingDirectory=/var/lib/strfry
+ExecStart=/usr/bin/strfry relay --config /etc/strfry.conf
 Restart=on-failure
-RestartSec=5
-ProtectHome=yes
-NoNewPrivileges=yes
-ProtectSystem=full
-LimitCORE=1000000000
+RestartSec=2s
+LimitNOFILE=1000000
 
 [Install]
 WantedBy=multi-user.target

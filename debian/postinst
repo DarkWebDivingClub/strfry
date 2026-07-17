@@ -1,21 +1,33 @@
 #!/bin/sh
-
 set -e
 
-if ! getent group strfry >/dev/null 2>&1; then
-    addgroup --system --quiet strfry
-fi
-if ! getent passwd strfry >/dev/null 2>&1; then
-    adduser --system --quiet --ingroup strfry		\
-	    --no-create-home --home /nonexistent	\
-	    strfry
+if ! id -u strfry >/dev/null 2>&1; then
+    if command -v adduser >/dev/null 2>&1; then
+        adduser --system --group --home /var/lib/strfry --no-create-home --shell /usr/sbin/nologin strfry
+    else
+        useradd --system --home /var/lib/strfry --no-create-home --shell /usr/sbin/nologin strfry
+        if command -v groupadd >/dev/null 2>&1; then
+            groupadd --system strfry 2>/dev/null || true
+            usermod -g strfry strfry 2>/dev/null || true
+        fi
+    fi
 fi
 
-if [ "$1" = "configure" ] ; then
-    chown strfry:strfry /etc/strfry.conf
-    chown strfry:strfry /var/lib/strfry
+ensure_dir() {
+    dir="$1"
+    if [ -d "$dir" ]; then
+        return 0
+    fi
+    install -d -o strfry -g strfry "$dir"
+}
 
-    systemctl daemon-reload
-    systemctl enable strfry.service
-    systemctl start strfry
+ensure_dir /var/lib/strfry
+ensure_dir /var/lib/strfry/strfry-db
+
+if command -v systemctl >/dev/null 2>&1; then
+    systemctl daemon-reload || true
 fi
+
+#DEBHELPER#
+
+exit 0

@@ -1,12 +1,15 @@
 #!/bin/sh
-
 set -e
 
-if [ "$1" = remove ] && [ -d /run/systemd/system ] ; then
-	systemctl --system daemon-reload >/dev/null || true
-fi
 if [ "$1" = "purge" ]; then
-	if [ -x "/usr/bin/deb-systemd-helper" ]; then
-		deb-systemd-helper purge 'strfry.service' >/dev/null || true
-	fi
+    if id -u strfry >/dev/null 2>&1; then
+        deluser --system strfry >/dev/null 2>&1 || true
+    fi
+    if getent group strfry >/dev/null 2>&1; then
+        delgroup --system strfry >/dev/null 2>&1 || true
+    fi
 fi
+
+#DEBHELPER#
+
+exit 0

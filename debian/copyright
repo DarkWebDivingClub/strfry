@@ -4,10 +4,14 @@ Upstream-Contact: Doug Hoytech <doug@hoytech.com>
 Source: https://github.com/hoytech/strfry
 
 Files: *
-Copyright: 2023 Doug Hoytech
-License: GPL-3
+Copyright: 2023-2025 Doug Hoytech
+License: GPL-3+
 
-License: GPL-3
+Files: debian/*
+Copyright: 2026 René Malmgren
+License: GPL-3+
+
+License: GPL-3+
  This program is free software: you can redistribute it and/or modify
  it under the terms of the GNU General Public License as published by
  the Free Software Foundation, either version 3 of the License, or

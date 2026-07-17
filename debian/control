@@ -1,13 +1,12 @@
 Source: strfry
-Section: admin
+Section: net
 Priority: optional
-Maintainer: Doug Hoytech <doug@hoytech.com>
-Build-Depends: debhelper (>= 8.0.0)
+Maintainer: René Malmgren <rene@redtoken.ae>
+Build-Depends: debhelper-compat (= 13), g++, make, pkg-config, perl, libssl-dev, zlib1g-dev, liblmdb-dev, libflatbuffers-dev, libsecp256k1-dev, libzstd-dev
 
 Package: strfry
 Architecture: amd64
-Depends: ${shlibs:Depends}
-Conflicts:
-Replaces:
-Provides: strfry
-Description: strfry is a relay for the nostr protocol
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: strfry Nostr relay
+ strfry is a relay for the Nostr protocol. It uses LMDB for storage
+ and supports NIP-77 negentropy syncing.

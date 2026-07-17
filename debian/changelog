@@ -1,6 +1,5 @@
-strfry (0.9.6-1) unstable; urgency=low
+strfry (1.1.0-dwdc.1) alfa; urgency=medium
 
-  * Initial ubuntu test release
+  * Mission 3: Package strfry 1.1.0 for DWDC relay
 
- -- Doug Hoytech <doug@hoytech.com>  Fri, 22 Sep 2023 17:32:21 +0800
-
+ -- René Malmgren <rene@redtoken.ae>  Fri, 17 Jul 2026 23:39:10 +0200
