@@ -5,3 +5,9 @@
 /strfry-db/*.mdb
 .vscode/*
 /strfry-db-test/
+debian/.debhelper/
+debian/debhelper-build-stamp
+debian/files
+debian/strfry.postrm.debhelper
+debian/strfry.substvars
+debian/strfry/
