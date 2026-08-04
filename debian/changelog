@@ -1,3 +1,9 @@
+strfry (1.1.0-dwdc.1+deb13) trixie; urgency=medium
+
+  * Trixie packaging: version 1.1.0-dwdc.1+deb13
+
+ -- Rene Malmgren <duke_h3@dwdc.club>  Mon, 04 Aug 2026 01:00:00 +0400
+
 strfry (1.1.0-dwdc.1) alfa; urgency=medium
 
   * Mission 3: Package strfry 1.1.0 for DWDC relay
