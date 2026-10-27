@@ -1,3 +1,9 @@
+strfry (1.1.0-dwdc.2) alfa; urgency=medium
+
+  * Mission 44: add systemd sleep hook to restart strfry on wake
+
+ -- Rene Malmgren <duke_h3@dwdc.club>  Tue, 27 Oct 2026 21:16:35 +0100
+
 strfry (1.1.0-dwdc.1) alfa; urgency=medium
 
   * Mission 3: Package strfry 1.1.0 for DWDC relay
