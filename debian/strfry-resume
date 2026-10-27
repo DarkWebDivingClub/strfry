@@ -1,0 +1,10 @@
+#!/bin/bash
+# Restart strfry after resume from sleep.
+# strfry's websocket listener can freeze during long suspends,
+# leaving it unresponsive to client connections.
+
+case "$1" in
+    post)
+        systemctl restart strfry.service || true
+        ;;
+esac

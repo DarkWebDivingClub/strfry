@@ -1,3 +1,9 @@
+strfry (1.1.0-dwdc.2+deb13) trixie; urgency=medium
+
+  * Add systemd sleep hook to restart strfry on wake
+
+ -- Rene Malmgren <duke_h3@dwdc.club>  Sun, 24 Aug 2026 15:30:00 +0200
+
 strfry (1.1.0-dwdc.1+deb13) trixie; urgency=medium
 
   * Trixie packaging: version 1.1.0-dwdc.1+deb13

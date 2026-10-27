@@ -17,3 +17,5 @@ override_dh_auto_install:
 	cp -a strfry.conf debian/strfry/etc/strfry.conf
 	sed -i 's|./strfry-db/|/var/lib/strfry/strfry-db/|g' debian/strfry/etc/strfry.conf
 	cp -a debian/strfry.service debian/strfry/usr/lib/systemd/system/
+	mkdir -p debian/strfry/usr/lib/systemd/system-sleep
+	install -m 755 debian/strfry-resume debian/strfry/usr/lib/systemd/system-sleep/strfry-resume
